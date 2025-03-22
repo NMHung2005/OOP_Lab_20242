@@ -12,7 +12,6 @@ public class display {
             "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" 
         };
-
         int monthNumber = -1;
         while (monthNumber == -1) {
             System.out.print("Enter the month (full name, abbreviation, or number 1-12): ");
