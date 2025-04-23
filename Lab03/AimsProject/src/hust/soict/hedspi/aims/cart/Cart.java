@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims.cart;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import hust.soict.hedspi.aims.media.Media;
@@ -8,6 +9,14 @@ import hust.soict.hedspi.aims.media.Media;
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	private List<Media> itemsOrdered = new ArrayList<Media>();
+
+	public void sortByTitleCost() {
+		Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+	}
+
+	public void sortByCostTitle() {
+		Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+	}
 
 	public void addMedia(Media media1) {
 		itemsOrdered.add(media1);
@@ -33,7 +42,6 @@ public class Cart {
 		for (Media t : itemsOrdered) {
 			System.out.println(t.toString());
 		}
-		System.out.printf("Total cost: %.2f\n", totalCost());
 	}
 
 	public void searchId(int id) {
@@ -46,14 +54,14 @@ public class Cart {
 		System.out.println("No found!");
 	}
 
-	public void searchTitle(String str) {
+	public Media searchTitle(String str) {
 		for (Media t : itemsOrdered) {
 			if (t.isMatch(str)) {
-				System.out.println("Found DVD: " + t.toString());
-				return;
+				return t;
 			}
 		}
 		System.out.println("No found!");
+		return null;
 	}
 
 }

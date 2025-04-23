@@ -25,4 +25,8 @@ public class Store {
 			System.out.println(t.toString());
 		}
 	}
+
+	public List<Media> getItemsInStore() {
+		return itemsInStore;
+	}
 }

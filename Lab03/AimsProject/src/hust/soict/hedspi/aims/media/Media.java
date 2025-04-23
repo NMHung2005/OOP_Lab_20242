@@ -66,4 +66,8 @@ public abstract class Media {
 		Media media = (Media) o;
 		return this.title.equals(media.title);
 	}
+
+	public String toString() {
+		return this.id + " - " + this.title + " - " + this.category + " - " + this.cost + " $";
+	}
 }
