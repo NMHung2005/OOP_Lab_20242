@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class Track {
+public class Track implements Playable {
 	private String title;
 	private int length;
 
@@ -18,4 +18,18 @@ public class Track {
 		this.length = length;
 	}
 
+	@Override
+	public void play() {
+		System.out.println("Playing DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
+	}
+
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Track track = (Track) o;
+		return this.length == track.length && this.title.equals(track.title);
+	}
 }
