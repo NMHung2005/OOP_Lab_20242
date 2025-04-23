@@ -6,6 +6,14 @@ public abstract class Media {
 	protected String category;
 	protected float cost;
 
+	public Media(int id, String title, String category, float cost) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.category = category;
+		this.cost = cost;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -38,4 +46,11 @@ public abstract class Media {
 		this.cost = cost;
 	}
 
+	public boolean isMatch(int id) {
+		return this.id == id;
+	}
+
+	public boolean isMatch(String title) {
+		return this.title.equalsIgnoreCase(title);
+	}
 }

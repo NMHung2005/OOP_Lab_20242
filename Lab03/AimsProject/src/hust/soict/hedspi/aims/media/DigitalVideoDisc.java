@@ -1,56 +1,11 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Disc {
-
+public class DigitalVideoDisc extends Disc implements Playable {
+	private int length;
 	private String director;
 
-	private int length;
-	private static int nbDigitalVideoDiscs = 0;
-
-	public String getDirector() {
-		return director;
-	}
-
-	public int getLength() {
-		return length;
-	}
-
-	public DigitalVideoDisc() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public DigitalVideoDisc(String title) {
-		this.title = title;
-		nbDigitalVideoDiscs++;
-		id = nbDigitalVideoDiscs;
-	}
-
-	public DigitalVideoDisc(String title, String category, float cost) {
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
-		nbDigitalVideoDiscs++;
-		id = nbDigitalVideoDiscs;
-	}
-
-	public DigitalVideoDisc(String director, String category, String title, float cost) {
-		this.director = director;
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
-		nbDigitalVideoDiscs++;
-		id = nbDigitalVideoDiscs;
-	}
-
-	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-		this.length = length;
-		this.director = director;
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
-		nbDigitalVideoDiscs++;
-		id = nbDigitalVideoDiscs;
+	public DigitalVideoDisc(int id, String title, String category, float cost, int length, String director) {
+		super(id, title, category, cost, length, director);
 	}
 
 	public String toString() {
@@ -58,11 +13,8 @@ public class DigitalVideoDisc extends Disc {
 				+ this.cost + " $";
 	}
 
-	public boolean isMatch(int id) {
-		return this.id == id;
-	}
-
-	public boolean isMatch(String title) {
-		return this.title.toLowerCase().contains(title.toLowerCase());
+	public void play() {
+		System.out.println("Playing DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
 	}
 }
