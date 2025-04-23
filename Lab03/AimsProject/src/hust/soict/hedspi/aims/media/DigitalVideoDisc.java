@@ -1,45 +1,26 @@
-package hust.soict.hedspi.aims.disc;
+package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc {
-	private int id;
-	private String title;
-	private String category;
+public class DigitalVideoDisc extends Disc {
+
 	private String director;
-	private float cost;
+
 	private int length;
 	private static int nbDigitalVideoDiscs = 0;
 
-	public int getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
 	public String getDirector() {
 		return director;
-	}
-
-	public float getCost() {
-		return cost;
 	}
 
 	public int getLength() {
 		return length;
 	}
 
-	public DigitalVideoDisc(String title) {
-		this.title = title;
-		nbDigitalVideoDiscs++;
-		id = nbDigitalVideoDiscs;
+	public DigitalVideoDisc() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setTitle(String title) {
+	public DigitalVideoDisc(String title) {
 		this.title = title;
 		nbDigitalVideoDiscs++;
 		id = nbDigitalVideoDiscs;
