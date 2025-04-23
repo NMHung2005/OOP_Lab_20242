@@ -11,7 +11,7 @@ public class Cart {
 
 	public void addMedia(Media media1) {
 		itemsOrdered.add(media1);
-		System.out.println("The disc has been added");
+		System.out.println("The media has been added");
 
 	}
 
@@ -55,4 +55,5 @@ public class Cart {
 		}
 		System.out.println("No found!");
 	}
+
 }

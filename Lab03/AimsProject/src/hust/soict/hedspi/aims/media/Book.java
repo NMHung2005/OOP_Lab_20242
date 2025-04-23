@@ -3,7 +3,11 @@ package hust.soict.hedspi.aims.media;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book extends Media {
+
+	public Book(int id, String title, String category, float cost) {
+		super(id, title, category, cost);
+	}
 
 	private List<String> authors = new ArrayList<String>();
 
@@ -13,10 +17,6 @@ public class Book {
 
 	public void setAuthors(List<String> authors) {
 		this.authors = authors;
-	}
-
-	public Book() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void addAuthor(String author) {
@@ -32,5 +32,9 @@ public class Book {
 			authors.remove(author);
 			System.out.println("Da xoa phan tu");
 		}
+	}
+
+	public String toString() {
+		return "BOOK - " + this.title + " - " + this.category + " - " + this.cost + " $";
 	}
 }
