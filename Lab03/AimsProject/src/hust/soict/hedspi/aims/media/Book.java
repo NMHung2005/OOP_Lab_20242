@@ -15,10 +15,6 @@ public class Book extends Media {
 		return authors;
 	}
 
-	public void setAuthors(List<String> authors) {
-		this.authors = authors;
-	}
-
 	public void addAuthor(String author) {
 		if (!authors.contains(author)) {
 			authors.add(author);
@@ -35,6 +31,6 @@ public class Book extends Media {
 	}
 
 	public String toString() {
-		return "BOOK - " + this.title + " - " + this.category + " - " + this.cost + " $";
+		return "BOOK - " + this.id + " - " + this.title + " - " + this.category + " - " + this.cost + " $";
 	}
 }
