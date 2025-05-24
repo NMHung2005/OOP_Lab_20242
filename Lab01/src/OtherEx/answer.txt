@@ -1,3 +1,0 @@
-6.1
-- Nếu chọn "Cancel", chương trình hiện thông báo "You've chosen: No"
-- Để tuỳ chỉnh các option, ta có thể sử dụng method showOptionDialog, dùng String[] Options = {"Yes","No"} để cửa sổ chỉ hiện ra 2 options Yes và No
