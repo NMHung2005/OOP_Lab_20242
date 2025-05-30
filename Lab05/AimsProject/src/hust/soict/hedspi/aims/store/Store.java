@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.naming.LimitExceededException;
+
 import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.exception.PlayerException;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Playable;
 
@@ -71,7 +74,7 @@ public class Store {
 		}
 	}
 
-	public void addMediaToCart(Scanner scanner, Cart cart) {
+	public void addMediaToCart(Scanner scanner, Cart cart) throws LimitExceededException {
 		System.out.print("Enter the title of the media to add to cart: ");
 		String title = scanner.nextLine();
 		boolean found = false;
@@ -90,7 +93,7 @@ public class Store {
 		}
 	}
 
-	public void playMedia(Cart cart, Scanner scanner) {
+	public void playMedia(Cart cart, Scanner scanner) throws PlayerException {
 		System.out.print("Enter the title of the media you want to play: ");
 		String title = scanner.nextLine();
 
